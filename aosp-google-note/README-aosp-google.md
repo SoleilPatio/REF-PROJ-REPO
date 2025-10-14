@@ -1,7 +1,12 @@
 # install Repo
 mkdir ~/bin
 PATH=~/bin:$PATH
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+
+  - curl sometimes cannot write ome directory, this will failed:
+    - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+  - use this, and move to ~/bin by yourself
+    - curl https://storage.googleapis.com/git-repo-downloads/repo -o repo
+
 chmod a+x ~/bin/repo
 
 # repo init
@@ -10,7 +15,7 @@ chmod a+x ~/bin/repo
   一般來說，直接下載完整歷史紀錄會更方便
 repo init -u https://android.googlesource.com/platform/manifest -b android-14.0.0_r1
 
-repo init -u https://android.googlesource.com/platform/manifest -b android-latest-release ==> 改成這樣
+repo init -u https://android.googlesource.com/platform/manifest -b android-latest-release --depth=1 ==> 改成這樣
 
 # 同步
 repo sync -j$(nproc --all)
