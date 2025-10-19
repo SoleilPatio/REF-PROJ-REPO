@@ -9,7 +9,7 @@
     - [build tool]()
       ```sh
       tools/install-build-deps --android --ui --linux-arm
-      tools/gn args out/linux
+      tools/gn args out/linux   #only android need to write config file
       tools/ninja -C out/linux
       ```
     - [build ui]()
