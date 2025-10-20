@@ -1,3 +1,5 @@
+[OpenBLAS github repo](https://github.com/OpenMathLib/OpenBLAS)
+
 1. 任何使用 OpenBLAS 的程式（如 AnTuTu）在啟動時，libopenblas.so 函式庫會被載入到記憶體。
 2. 這個初始化函式會呼叫 getarch() 和 get_cpu_features() 之類的內部函式，最終會執行到 `cpuid_arm64.c` 這個檔案中的程式碼。
 3. 真假？  對於 CME，它會檢查 ID_AA64ISAR1_EL1 這個暫存器。該暫存器的第 8 到 11 位元 (ID_AA64ISAR1_EL1[11:8]) 用於表示對複數運算的支援程度。如果值不為 0，就表示 CPU 至少有部分支援。
