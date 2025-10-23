@@ -12,6 +12,7 @@
       tools/gn args out/linux   #only android need to write config file
       tools/ninja -C out/linux
       ```
+      
     - [build ui]()
       ```sh
       git config --global safe.directory '*'  #[optional] NFS問題1: git檢查nfs磁碟權限跟owner不一樣
