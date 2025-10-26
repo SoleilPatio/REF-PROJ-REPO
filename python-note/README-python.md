@@ -7,8 +7,8 @@
 
 
 # 指定python環境(Windows)
-py -3.13 -m venv .venv-win
-.\.venv-win\Scripts\activate
+py -3.13 -m venv .venv-win-3.13
+.\.venv-win-3.13\Scripts\activate
 python -V
 pip install -r requirements.txt
 
@@ -16,8 +16,8 @@ pip install -r requirements.txt
 # 指定python環境(Linux/WSL)
 pyenv install 3.13.0         # 一次性
 pyenv local 3.13.0           # 這個資料夾預設 3.13
-python -m venv .venv-wsl
-source .venv-wsl/bin/activate
+python -m venv .venv-wsl-3.13
+source .venv-wsl-3.13/bin/activate
 python -V
 pip install -r requirements.txt
 
