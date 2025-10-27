@@ -23,7 +23,11 @@
      2. > 0x10010(~64KB): Secondary Allocator ==> 每一次大額分配，都直接對應一次 `mmap`。它管理的記憶體是離散的、不連續的 VMA。
 
 
-# source code:
+# 如何知道scudo運作中
+showmap $(pgrep  system_server) | grep scudo
+
+
+# [source code ]():
 
 ## libc.so
 aosp-google/aosp-google/bionic/libc/Android.bp
