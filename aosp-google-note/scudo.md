@@ -15,6 +15,13 @@
    2. Bionic C Library (`libc.so`): App 的 malloc() 呼叫被連結到 libc.so。
    3. Scudo Implementation: libc.so 內部的 malloc() 實作，實際上就是呼叫 Scudo 的分配器。
 
+# 運作
+  1. allocate 記憶體時候
+     1. < 0x10010(~64KB): Primary Allocator ==> TSD， 用一次非常大的 `mmap` 圈一大塊地 (VMA)，然後自己在這塊地裡面進行精細管理，切分成無數小塊來滿足小額分配。
+        1. [注意]:mmap只是圈地有一塊VMA區域，要當第一次memory access造成page fault時候才會真正的佔用實體記憶體
+        2. [注意]:unmap會真正歸還給系統實體記憶體
+     2. > 0x10010(~64KB): Secondary Allocator ==> 每一次大額分配，都直接對應一次 `mmap`。它管理的記憶體是離散的、不連續的 VMA。
+
 
 # source code:
 
@@ -23,7 +30,8 @@ aosp-google/aosp-google/bionic/libc/Android.bp
 
   - 開關scudo
     - 線索: undefined USE_SCUDO, 則會用回jemalloc
-    - malloc_low_memory: {   cflags: ["-UUSE_SCUDO"],   whole_static_libs: ["libjemalloc5"]
+    - malloc_low_memory: {   cflags: ["-UUSE_SCUDO"],   whole_static_libs: ["libjemalloc5", "libc_jemalloc_wrapper",] }
+    - 有兩各地方要改
 
 
 ## libscudo.o
