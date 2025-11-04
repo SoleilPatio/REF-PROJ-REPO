@@ -24,6 +24,9 @@ popd
 
 # [Plugin]
 * [ComfyUI Manager](https://github.com/Comfy-Org/ComfyUI-Manager)
+cd ComfyUI/custom_nodes
+git clone https://github.com/ltdrdata/ComfyUI-Manager.git
+
 
 # [Memo]
   - save image prefix: ComfyUI-%date:yyyyMMdd_hhmmss%
