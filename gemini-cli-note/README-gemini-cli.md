@@ -1,4 +1,10 @@
+## [Windows Install]()
+npm install -g @google/gemini-cli
 
+
+
+
+## [Ubuntu Install]()
 ## install nodejs
 
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
