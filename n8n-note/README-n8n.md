@@ -16,6 +16,8 @@ n8n start
 - 更新
 npm update -g n8n   ==>to latest version
 
+
+
 # Reference Command
 [npm]:Node Package Manager (管理套件)
 - 查看安裝套件
@@ -31,6 +33,9 @@ npm info n8n            ==> 查看套件詳細資訊
 - 版本
 node -v
 
+
+# Reference Web Site
+[Google AI Studio - API Key](https://aistudio.google.com/app/api-keys)
 
 
 

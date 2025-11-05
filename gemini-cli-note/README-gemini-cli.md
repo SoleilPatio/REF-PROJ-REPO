@@ -27,10 +27,7 @@ mkdir -p ~/bin/.npm-global
 npm config set prefix '~/bin/.npm-global'
 
 這會在 `~/.npmrc` 中加一行：
-
-```
-prefix=~/bin/.npm-global
-```
+  prefix=~/bin/.npm-global
 
 ---
 
