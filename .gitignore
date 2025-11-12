@@ -1,1 +1,27 @@
+#general
+~*
+*.bak
+
+#vscode
+.vscode/
+tempCodeRunnerFile*
+
+
+#python
+*.pyc
+build/
+dist/
+__pycache__/
+
+#output directory
+out-*/
+out/
+out-*
+output/
+
+
+#local not sync
+/local
 *.local
+.cache/
+sandbox/
