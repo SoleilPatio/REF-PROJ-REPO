@@ -26,7 +26,7 @@ def load_api_key(filename: str) -> str:
         raise FileNotFoundError(f"找不到 API 金鑰檔案：{key_path}")
 
     with open(key_path, "r", encoding="utf-8") as f:
-        keys = [line.strip() for line in f.readlines() if line.strip()]
+        keys = [line.strip() for line in f.readlines() if line.strip() and not line.startswith("#")]
 
     if not keys:
         raise ValueError(f"檔案 {key_path} 內沒有任何有效的 API Key。")
